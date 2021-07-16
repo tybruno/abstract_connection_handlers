@@ -1,9 +1,9 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import Type, Iterable
 
 
 class AbstractHandlersGenerator:
-    def __init__(self, handler: Type):
+    def __init__(self, handler_factory: Type):
         ...
 
     @abstractmethod
