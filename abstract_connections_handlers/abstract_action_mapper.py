@@ -1,16 +1,21 @@
-from abc import ABC, abstractmethod
+from abc import (
+    ABC,
+    abstractmethod,
+)
+from typing import (
+    Iterable,
+    Type,
+)
+
 from abstract_connection_handlers.abstract_connections_handlers.abstract_action import (
-    AbstractHandlerAction,
     AbstractSendCommandsAction,
 )
-from typing import Type
 from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
     HandlerDetails,
 )
 from abstract_connection_handlers.abstract_connections_handlers.abstract_handlers_generators import (
     AbstractConnectionHandlersGenerator,
 )
-from typing import Iterable
 
 
 class AbstractHandlerActionMapper(ABC):

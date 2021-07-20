@@ -1,9 +1,9 @@
 from dataclasses import (
+    MISSING,
+    asdict,
     dataclass,
     fields,
-    asdict,
     is_dataclass,
-    MISSING,
 )
 
 

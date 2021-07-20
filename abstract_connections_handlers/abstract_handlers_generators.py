@@ -1,10 +1,16 @@
-from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
-    HandlerDetails,
-    Details,
+from abc import (
+    ABC,
+    abstractmethod,
+)
+from typing import (
+    Generator,
+    Iterable,
 )
 
-from abc import abstractmethod, ABC
-from typing import Iterable, Generator
+from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
+    Details,
+    HandlerDetails,
+)
 
 
 class AbstractConnectionHandlersGenerator(ABC):
