@@ -14,12 +14,6 @@ from typing import Iterable
 
 
 class AbstractHandlerActionMapper(ABC):
-    def __init__(
-        self, action: AbstractHandlerAction, mapping_factory: map = map
-    ):
-        self.action = action
-        self.mapping_factory = mapping_factory
-
     @abstractmethod
     def __call__(
         self,
@@ -30,29 +24,12 @@ class AbstractHandlerActionMapper(ABC):
 
 
 class AbstractHostsActionMapper(ABC):
-    def __init__(
-        self,
-        handler_details: HandlerDetails,
-        handler_generator: Type[AbstractConnectionHandlersGenerator],
-        mapper: AbstractHandlerActionMapper,
-    ):
-        self.handler_details = handler_details
-        self.handler_generator = handler_generator
-        self.mapper = mapper
-
     @abstractmethod
     def __call__(self, *args, **kwargs) -> map:
         ...
 
 
 class AbstractHandlerSendCommandsActionMapper(AbstractHandlerActionMapper):
-    def __init__(
-        self,
-        action: AbstractSendCommandsAction,
-        mapping_factory: map = map,
-    ):
-        super().__init__(action=action, mapping_factory=mapping_factory)
-
     @abstractmethod
     def __call__(
         self,
@@ -65,6 +42,14 @@ class AbstractHandlerSendCommandsActionMapper(AbstractHandlerActionMapper):
 
 
 class HandlerSendCommandsActionMapper(AbstractHandlerSendCommandsActionMapper):
+    def __init__(
+        self,
+        action: Type[AbstractSendCommandsAction],
+        mapping_factory: map = map,
+    ):
+        self.action = action
+        self.mapping_factory = mapping_factory
+
     def __call__(
         self,
         connection_handlers: Iterable,
@@ -80,6 +65,16 @@ class HandlerSendCommandsActionMapper(AbstractHandlerSendCommandsActionMapper):
 
 
 class HostsSendCommandsActionMapper(AbstractHostsActionMapper):
+    def __init__(
+        self,
+        handler_details: HandlerDetails,
+        handler_generator: Type[AbstractConnectionHandlersGenerator],
+        mapper: AbstractHandlerActionMapper,
+    ):
+        self.handler_details = handler_details
+        self.handler_generator = handler_generator
+        self.mapper = mapper
+
     def __call__(
         self,
         hosts: Iterable[str],

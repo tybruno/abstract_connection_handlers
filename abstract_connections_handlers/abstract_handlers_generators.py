@@ -4,7 +4,7 @@ from abstract_connection_handlers.abstract_connections_handlers.abstract_handler
 )
 
 from abc import abstractmethod, ABC
-from typing import Iterable, Generator, Callable
+from typing import Iterable, Generator
 
 
 class AbstractConnectionHandlersGenerator(ABC):
