@@ -7,11 +7,11 @@ from dataclasses import (
 )
 
 
-class UNSET(type(MISSING)):
+class _UNSET(type(MISSING)):
     ...
 
 
-UNSET = UNSET()
+UNSET = _UNSET()
 
 
 @dataclass
@@ -25,7 +25,7 @@ class Details:
                 dictionary.update(attr.as_dict())
             elif is_dataclass(attr):
                 dictionary.update(asdict(attr))
-            elif isinstance(attr, UNSET):
+            elif isinstance(attr, _UNSET):
                 continue
             elif attr:
                 dictionary[f.name] = attr
