@@ -2,12 +2,12 @@ from dataclasses import (
     dataclass,
     fields,
     asdict,
-    _is_dataclass_instance,
-    _MISSING_TYPE,
+    is_dataclass,
+    MISSING,
 )
 
 
-class UNSET(_MISSING_TYPE):
+class UNSET(type(MISSING)):
     ...
 
 
@@ -23,9 +23,9 @@ class Details:
             attr = getattr(self, f.name)
             if isinstance(attr, Details):
                 dictionary.update(attr.as_dict())
-            elif _is_dataclass_instance(attr):
+            elif is_dataclass(attr):
                 dictionary.update(asdict(attr))
-            elif isinstance(attr, _MISSING_TYPE):
+            elif isinstance(attr, UNSET):
                 continue
             elif attr:
                 dictionary[f.name] = attr

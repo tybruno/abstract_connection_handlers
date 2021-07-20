@@ -1,5 +1,5 @@
 from abstract_connection_handlers.abstract_connections_handlers.abstract_action_mapper import (
-    AbstractActionMapper,
+    AbstractHandlerSendCommandsActionMapper,
 )
 from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
     AuthenticationDetails,
@@ -12,7 +12,7 @@ from abstract_connection_handlers.abstract_connections_handlers.abstract_handler
 )
 
 __all__ = (
-    "AbstractActionMapper",
+    "AbstractHandlerSendCommandsActionMapper",
     "AuthenticationDetails",
     "ConnectionDetails",
     "HandlerDetails",
