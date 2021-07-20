@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from abstract_connection_handlers.abstract_connections_handlers.abstract_handlers_generators import (
-    AbstractHandlersGenerator,
+    AbstractConnectionHandlersGenerator,
 )
 from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
     HandlerDetails,
@@ -13,7 +13,7 @@ from abstract_connection_handlers.abstract_connections_handlers.abstract_action 
 
 @dataclass
 class AbstractRunBook(ABC):
-    handler_generator: AbstractHandlersGenerator
+    handler_generator: AbstractConnectionHandlersGenerator
     handler_action: AbstractHandlerAction
 
     @abstractmethod

@@ -8,7 +8,7 @@ from abstract_connection_handlers.abstract_connections_handlers.abstract_handler
     UNSET,
 )
 from abstract_connection_handlers.abstract_connections_handlers.abstract_handlers_generators import (
-    AbstractHandlersGenerator,
+    AbstractConnectionHandlersGenerator,
 )
 
 __all__ = (
@@ -16,6 +16,6 @@ __all__ = (
     "AuthenticationDetails",
     "ConnectionDetails",
     "HandlerDetails",
-    "AbstractHandlersGenerator",
+    "AbstractConnectionHandlersGenerator",
     "UNSET",
 )
