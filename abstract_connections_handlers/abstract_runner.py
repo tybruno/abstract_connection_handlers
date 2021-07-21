@@ -11,12 +11,22 @@ from abstract_connection_handlers.abstract_connections_handlers.abstract_action_
 from abstract_connection_handlers.abstract_connections_handlers.abstract_action_mapper import (
     HandlerSendCommandsActionMapper,
 )
+from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
+    HandlerDetails,
+)
 
 
 class AbstractRunner(ABC):
     @abstractmethod
     def __call__(self, *args, **kwargs):
         ...
+
+
+@dataclass
+class SendCommandsRunnerDetails:
+    hosts: Iterable
+    handler_details: HandlerDetails
+    commands: Iterable[str]
 
 
 @dataclass
