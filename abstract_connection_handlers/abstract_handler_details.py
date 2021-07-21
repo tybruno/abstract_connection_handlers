@@ -5,7 +5,6 @@ from dataclasses import (
     fields,
     is_dataclass,
 )
-from typing import NamedTuple, Iterable
 
 
 class _UNSET(type(MISSING)):

@@ -7,13 +7,13 @@ from typing import (
     Type,
 )
 
-from abstract_connection_handlers.abstract_connections_handlers.abstract_action import (
+from abstract_connection_handlers.abstract_action import (
     AbstractSendCommandsAction,
 )
-from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
+from abstract_connection_handlers.abstract_handler_details import (
     HandlerDetails,
 )
-from abstract_connection_handlers.abstract_connections_handlers.abstract_handlers_generators import (
+from abstract_connection_handlers.abstract_handlers_generators import (
     AbstractConnectionHandlersGenerator,
 )
 

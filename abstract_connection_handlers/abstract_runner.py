@@ -5,13 +5,14 @@ from abc import (
 from dataclasses import dataclass
 from typing import Iterable
 
-from abstract_connection_handlers.abstract_connections_handlers.abstract_action_handler import (
+
+from abstract_connection_handlers.abstract_action_handler import (
     AbstractActionHandler,
 )
-from abstract_connection_handlers.abstract_connections_handlers.abstract_action_mapper import (
+from abstract_connection_handlers.abstract_action_mapper import (
     HandlerSendCommandsActionMapper,
 )
-from abstract_connection_handlers.abstract_connections_handlers.abstract_handler_details import (
+from abstract_connection_handlers.abstract_handler_details import (
     HandlerDetails,
 )
 
