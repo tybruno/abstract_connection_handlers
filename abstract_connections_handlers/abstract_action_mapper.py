@@ -69,7 +69,7 @@ class HandlerSendCommandsActionMapper(AbstractHandlerSendCommandsActionMapper):
         return mapping
 
 
-class ScrapliHostsSendCommandsActionMapper(AbstractHostsActionMapper):
+class HostsSendCommandsActionMapper(AbstractHostsActionMapper):
     def __init__(
         self,
         handler_details: HandlerDetails,
