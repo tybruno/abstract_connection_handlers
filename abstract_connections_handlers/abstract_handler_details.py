@@ -5,6 +5,7 @@ from dataclasses import (
     fields,
     is_dataclass,
 )
+from typing import NamedTuple, Iterable
 
 
 class _UNSET(type(MISSING)):
@@ -49,3 +50,10 @@ class ConnectionDetails(Details):
 class HandlerDetails(Details):
     auth_details: AuthenticationDetails
     connection_details: ConnectionDetails
+
+
+@dataclass
+class RunnerDetails:
+    hosts: Iterable
+    handler_details: HandlerDetails
+    commands: Iterable[str]
