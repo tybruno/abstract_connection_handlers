@@ -24,14 +24,14 @@ class AbstractRunner(ABC):
 
 
 @dataclass
-class SendCommandsRunnerDetails:
+class CommandRunnerDetails:
     hosts: Iterable
     handler_details: HandlerDetails
     commands: Iterable[str]
 
 
 @dataclass
-class SendCommandsRunner(AbstractRunner):
+class CommandRunner(AbstractRunner):
     def __init__(
         self,
         action_mapper: HandlerSendCommandsActionMapper,
